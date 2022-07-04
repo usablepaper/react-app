@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./post.css";
 import Author from "../author/Author";
 import Category from "../category/Category.jsx";

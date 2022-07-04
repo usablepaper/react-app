@@ -10,7 +10,7 @@ function Logined({ user, isLogin, setIsLogin, handleIsLogin }) {
         </a>
       </li>
       <li>
-        <a href="#" class="button">
+        <a href="#" className="button">
           <img src={modifyIcon} alt="" />
           <span>Write</span>
         </a>

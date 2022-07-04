@@ -7,10 +7,9 @@ function Posts({ postsData }) {
   return (
     <ul className="posts">
       {postsData.map((post) => (
-        <li>
+        <li key={post.id}>
           <Link to={"./PostView/" + post.id} className="post">
             <Post
-              key={post.id}
               category={post.category}
               contents={post.contents}
               created={post.created}
