@@ -15,16 +15,10 @@ function App() {
         <Header usersData={data.users} userId={userId} />
         <Routes>
           <Route path="/" element={<HomePage data={data} userId={userId} />} />
-          {data.posts.map((post, i) => {
-            i += 1;
-            return (
-              <Route
-                key={i}
-                path={"/PostView/" + i}
-                element={<PostView postsData={post} />}
-              />
-            );
-          })}
+          <Route
+            path="/PostView"
+            element={<PostView postsData={data.posts} />}
+          />
         </Routes>
         <Footer />
       </BrowserRouter>

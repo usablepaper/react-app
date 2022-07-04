@@ -8,7 +8,7 @@ function Posts({ postsData }) {
     <ul className="posts">
       {postsData.map((post) => (
         <li key={post.id}>
-          <Link to={"./PostView/" + post.id} className="post">
+          <Link to="./PostView" className="post" state={{ post: post.id }}>
             <Post
               category={post.category}
               contents={post.contents}
