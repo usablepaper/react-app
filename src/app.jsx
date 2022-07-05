@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import UserContext from "./context/UserContext";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import HomePage from "./pages/homePage";
@@ -8,11 +9,12 @@ import data from "./data.json";
 import "./app.css";
 
 function App() {
-  const [userId, setuserId] = useState(0);
+  const [userId, setUserId] = useState(0);
+  const [isLogin, setIsLogin] = useState(true);
   return (
     <>
-      <BrowserRouter>
-        <Header usersData={data.users} userId={userId} />
+      <UserContext.Provider value={{ isLogin, setIsLogin }}>
+        <Header data={data} userId={userId} setUserId={setUserId} />
         <Routes>
           <Route path="/" element={<HomePage data={data} userId={userId} />} />
           {data.posts.map((post) => {
@@ -26,7 +28,7 @@ function App() {
           })}
         </Routes>
         <Footer />
-      </BrowserRouter>
+      </UserContext.Provider>
     </>
   );
 }

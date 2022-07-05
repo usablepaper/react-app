@@ -1,40 +1,30 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./header.css";
 import "./button.css";
 import logo from "../../assets/Logo.svg";
-
+import UserContext from "../../context/UserContext";
 import Logined from "./Logined";
 import Logouted from "./Logouted";
 
-const Header = ({ usersData, userId }) => {
+const Header = ({ data, userId, setUserId }) => {
+  const usersData = data.users;
+  const mainTitle = data.blog.mainTitle;
+  const { isLogin } = useContext(UserContext);
   const user = usersData[userId];
-  const [isLogin, setIsLogin] = useState(false);
-  function handleClick() {
-    setIsLogin(!isLogin);
-  }
   return (
     <header>
       <div className="max-width">
         <h1>
           <Link to="./">
-            <img src={logo} alt="My Blog" />
+            <img src={logo} alt={mainTitle} />
           </Link>
         </h1>
         <ul>
           {isLogin ? (
-            <Logined
-              user={user}
-              isLogin={isLogin}
-              setIsLogin={setIsLogin}
-              handleIsLogin={handleClick}
-            />
+            <Logined user={user} />
           ) : (
-            <Logouted
-              isLogin={isLogin}
-              setIsLogin={setIsLogin}
-              handleIsLogin={handleClick}
-            />
+            <Logouted setUserId={setUserId} />
           )}
         </ul>
       </div>

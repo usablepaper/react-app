@@ -13,7 +13,7 @@ function Post({
 }) {
   return (
     <article>
-      <img src={thumbnail} alt="" />
+      <img src={thumbnail} alt="ThumbnailImage" />
       <div className="contents-wrap">
         <Category category={category} />
         <h3>{title}</h3>

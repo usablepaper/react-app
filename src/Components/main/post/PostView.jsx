@@ -15,7 +15,7 @@ function ViewPost({ postsData }) {
           if (content.type === "p") {
             return <p key={i}>{content.text}</p>;
           } else if (content.type === "img") {
-            return <img key={i} src={content.src} alt="p" />;
+            return <img key={i} src={content.src} alt="ThumbnailImage" />;
           }
         })}
       </div>

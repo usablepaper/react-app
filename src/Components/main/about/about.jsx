@@ -17,7 +17,7 @@ function About({ usersData, userId }) {
   return (
     <aside className="about">
       <h2>About Me</h2>
-      <img src={user.profileImg} alt="" className="user-profile" />
+      <img src={user.profileImg} alt={user.name} className="user-profile" />
       <p className="user-name">{user.name}</p>
       <p className="user-description">{user.userInfo} </p>
       <h3>Categories</h3>
