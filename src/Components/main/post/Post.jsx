@@ -6,7 +6,6 @@ function Post({
   category,
   contents,
   created,
-  mainBg,
   profileImg,
   thumbnail,
   title,

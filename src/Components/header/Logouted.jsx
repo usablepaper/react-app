@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import loginIcon from "../../assets/icon-login.svg";
 import registerIcon from "../../assets/icon-register.svg";
 
@@ -5,16 +6,16 @@ function Logouted({ isLogin, setIsLogin, handleIsLogin }) {
   return (
     <>
       <li>
-        <a href="#" className="button gray">
+        <Link to="./" className="button gray">
           <img src={loginIcon} alt="" />
           <span onClick={handleIsLogin}>Login</span>
-        </a>
+        </Link>
       </li>
       <li className="only-pc">
-        <a href="#" className="button gray">
+        <Link to="./" className="button gray">
           <img src={registerIcon} alt="" />
           <span>Register</span>
-        </a>
+        </Link>
       </li>
     </>
   );

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import modifyIcon from "../../assets/icon-modify-white.svg";
 import logOutIcon from "../../assets/icon-logout.svg";
 
@@ -5,15 +6,15 @@ function Logined({ user, isLogin, setIsLogin, handleIsLogin }) {
   return (
     <>
       <li className="profile-img">
-        <a href="#">
+        <Link to="./">
           <img src={user.profileImg} alt="My Page" />
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="#" className="button">
+        <Link to="./" className="button">
           <img src={modifyIcon} alt="" />
           <span>Write</span>
-        </a>
+        </Link>
       </li>
       <li>
         <button className="button white" onClick={handleIsLogin}>

@@ -8,12 +8,11 @@ function Posts({ postsData }) {
     <ul className="posts">
       {postsData.map((post) => (
         <li key={post.id}>
-          <Link to="./PostView" className="post" state={{ post: post.id }}>
+          <Link to={"./PostPage/" + post.id} className="post">
             <Post
               category={post.category}
               contents={post.contents}
               created={post.created}
-              mainBg={post.mainBg}
               profileImg={post.profileImg}
               thumbnail={post.thumbnail}
               title={post.title}

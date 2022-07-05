@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./viewPost.css";
+import "./postView.css";
 import "./wrapbox.css";
 
 function ViewPost({ postsData }) {
@@ -20,9 +20,9 @@ function ViewPost({ postsData }) {
         })}
       </div>
       <div className="btn-group">
-        <a href="#" className="btn-modify">
+        <Link to="./" className="btn-modify">
           <span className="a11y-hidden">modify</span>
-        </a>
+        </Link>
         <button type="button" className="btn-delete">
           <span className="a11y-hidden">delete</span>
         </button>

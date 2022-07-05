@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./about.css";
 import Facebook from "../../../assets/Facebook.svg";
 import Twitter from "../../../assets/Twitter.svg";
@@ -24,7 +25,7 @@ function About({ usersData, userId }) {
         {user.category.map((category, i) => {
           return (
             <li key={i}>
-              <a href="#">{category}</a>
+              <Link to="./">{category}</Link>
             </li>
           );
         })}
@@ -34,9 +35,9 @@ function About({ usersData, userId }) {
         {Object.keys(user.sns).map((sns, i) => {
           return (
             <li key={i}>
-              <a href="#">
+              <Link to="./">
                 <img src={snsImages[sns]} alt={sns} />
-              </a>
+              </Link>
             </li>
           );
         })}
